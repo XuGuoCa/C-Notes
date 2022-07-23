@@ -15,6 +15,7 @@ void Function(int Choose, Person &Data) {
 		Seek(Data);
 		break;
 	case 4: //删除联系人
+		CutOut(Data);
 		break;
 	case 5: //修改联系人
 		break;

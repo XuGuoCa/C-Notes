@@ -5,5 +5,6 @@ using namespace std;
 # include "Add.h"
 # include "Show.h"
 # include "Seek.h"
+# include "CutOut.h"
 
 void Function(int Choose, Person &Data);
