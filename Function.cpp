@@ -1,3 +1,4 @@
+//菜单功能源文件
 # include "Function.h"
 
 void Function(int Choose, Person &Data) {
@@ -11,6 +12,7 @@ void Function(int Choose, Person &Data) {
 		Show(Data);
 		break;
 	case 3: //查找联系人
+		Seek(Data);
 		break;
 	case 4: //删除联系人
 		break;

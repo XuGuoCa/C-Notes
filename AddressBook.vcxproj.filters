@@ -30,6 +30,12 @@
     <ClCompile Include="Show.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Judgement.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Seek.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Struct.h">
@@ -45,6 +51,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Show.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Judgement.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Seek.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -16,7 +16,7 @@ void Add(Person& Data) {
 		cin >> Data.Data[i].number;
 		cout << "地址：";
 		cin >> Data.Data[i].Address;
-		++i;
+		i++;
 		cout << "" << endl;
 		cout << "你还要继续添加吗?" << endl;
 		cout << "输入Y/N" << endl;

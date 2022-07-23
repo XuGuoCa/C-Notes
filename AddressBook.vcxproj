@@ -131,12 +131,16 @@
     <ClCompile Include="AddressBook.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="Judgement.cpp" />
+    <ClCompile Include="Seek.cpp" />
     <ClCompile Include="Show.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Add.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Interface.h" />
+    <ClInclude Include="Judgement.h" />
+    <ClInclude Include="Seek.h" />
     <ClInclude Include="Show.h" />
     <ClInclude Include="Struct.h" />
   </ItemGroup>
