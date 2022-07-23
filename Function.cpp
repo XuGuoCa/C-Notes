@@ -1,10 +1,11 @@
 # include "Function.h"
 
-void Function(int Choose, Person &Contact) {
+void Function(int Choose, Person &Data) {
 
 	switch (Choose) {
 
 	case 1: //添加联系人
+		Add(Data);
 		break;
 	case 2: //显示联系人
 		break;

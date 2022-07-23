@@ -2,6 +2,6 @@
 # include <iostream>
 using namespace std;
 # include "Struct.h"
-# include "Function.h"
+# include <string>
 
-void Interface(Person &Data);
+void Add(Person& Data);

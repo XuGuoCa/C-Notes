@@ -15,7 +15,7 @@ struct A {
 struct Person {
 
 	A Data[1000];
-	int Quantity;
+	int Quantity = 0;
 };
 
 #endif

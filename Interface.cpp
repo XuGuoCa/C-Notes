@@ -1,8 +1,11 @@
 # include "Interface.h"
 
-void Interface(Person &Contact) {
+void Interface(Person &Data) {
 
-	switch (true) {
+	int Choose;
+
+	while(true) {
+
 		cout << "************" << endl;
 		cout << "1.添加联系人" << endl;
 		cout << "2.查看联系人" << endl;
@@ -12,13 +15,12 @@ void Interface(Person &Contact) {
 		cout << "0.退出该程序" << endl;
 		cout << "************" << endl;
 
-		int Choose;
 		cout << "" << endl;
 		cout << "选择你想使用的功能：";
 		cin >> Choose;
 
 		//功能界面
-		Function(Choose, Contact);
+		Function(Choose, Data);
 
 		if (Choose == 0) {
 
