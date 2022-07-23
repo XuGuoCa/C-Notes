@@ -8,6 +8,7 @@ void Function(int Choose, Person &Data) {
 		Add(Data);
 		break;
 	case 2: //显示联系人
+		Show(Data);
 		break;
 	case 3: //查找联系人
 		break;
