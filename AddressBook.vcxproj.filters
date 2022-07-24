@@ -39,6 +39,15 @@
     <ClCompile Include="CutOut.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Alter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Empty.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AddJudgement.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Struct.h">
@@ -63,6 +72,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="CutOut.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Alter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Empty.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AddJudgement.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

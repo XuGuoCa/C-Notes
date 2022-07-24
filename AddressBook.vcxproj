@@ -128,8 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Add.cpp" />
+    <ClCompile Include="AddJudgement.cpp" />
     <ClCompile Include="AddressBook.cpp" />
+    <ClCompile Include="Alter.cpp" />
     <ClCompile Include="CutOut.cpp" />
+    <ClCompile Include="Empty.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Judgement.cpp" />
@@ -138,7 +141,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Add.h" />
+    <ClInclude Include="AddJudgement.h" />
+    <ClInclude Include="Alter.h" />
     <ClInclude Include="CutOut.h" />
+    <ClInclude Include="Empty.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Interface.h" />
     <ClInclude Include="Judgement.h" />

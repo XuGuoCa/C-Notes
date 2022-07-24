@@ -4,6 +4,11 @@ int i = 0;
 
 void Add(Person& Data) {
 
+	if (AddJudgement(Data) == -1) {
+
+		i = 0;
+	}
+
 	string Choose;
 
 	do {

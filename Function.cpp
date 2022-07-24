@@ -18,6 +18,10 @@ void Function(int Choose, Person &Data) {
 		CutOut(Data);
 		break;
 	case 5: //修改联系人
+		Alter(Data);
+		break;
+	case 6: // 清空联系人
+		Empty(Data);
 		break;
 	default:
 		return;
