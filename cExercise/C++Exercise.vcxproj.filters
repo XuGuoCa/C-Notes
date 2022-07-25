@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Circle.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="构造函数.cpp">
+    <ClCompile Include="拷贝函数调用的时机.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
