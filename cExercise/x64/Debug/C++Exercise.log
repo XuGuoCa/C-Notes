@@ -1,0 +1,7 @@
+﻿  Circle.cpp
+E:\VsProjectSSH\VsProject\C++Exercise\Circle.cpp(20,19): error C2535: “void Spot::setX(int)”: 已经定义或声明成员函数
+E:\VsProjectSSH\VsProject\C++Exercise\Circle.cpp(11): message : 参见“Spot::setX”的声明
+E:\VsProjectSSH\VsProject\C++Exercise\Circle.cpp(25,17): error C2535: “int Spot::getY(void)”: 已经定义或声明成员函数
+E:\VsProjectSSH\VsProject\C++Exercise\Circle.cpp(16): message : 参见“Spot::getY”的声明
+  构造函数.cpp
+  正在生成代码...
