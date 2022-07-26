@@ -1,5 +1,4 @@
 ./AddressBook/x64/*
-./cExercise/.vs/*
 ./cExercise/x64/*
 ./AddressBook/.vcxproj/*
 ./AddressBook/.filters/*
