@@ -1,4 +1,2 @@
-/x64/
-*.vcxproj
-*.filters
-*.user
+./AdddressBook/x64/*
+./cExercise/x64/*
