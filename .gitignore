@@ -1,8 +1,4 @@
-./AddressBook/x64/*
-./cExercise/x64/*
-./AddressBook/.vcxproj/*
-./AddressBook/.filters/*
-./AddressBook/.user/*
-./cExercise/.vcxproj/*
-./cExercise/.filters/*
-./cExercise/.user/*
+/x64/
+*.vcxproj
+*.filters
+*.user
