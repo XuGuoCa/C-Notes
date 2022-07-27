@@ -1,2 +1,2 @@
-./AdddressBook/x64/*
-./cExercise/x64/*
+*.vs
+x64/
