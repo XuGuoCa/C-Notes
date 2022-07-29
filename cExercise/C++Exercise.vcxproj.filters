@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="this指针.cpp">
+    <ClCompile Include="成员函数做友元.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
