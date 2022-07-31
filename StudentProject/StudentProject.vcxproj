@@ -127,9 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Add.cpp" />
+    <ClCompile Include="Function.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="StudentProject.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Add.h" />
+    <ClInclude Include="Function.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="StudentClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
