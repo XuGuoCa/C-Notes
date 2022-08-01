@@ -1,6 +1,7 @@
 # include <iostream>
 using namespace std;
 # include <string>
+# include "Add.h"
 
 # ifndef HERO_H
 # define HERO_H
