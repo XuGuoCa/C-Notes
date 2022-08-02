@@ -30,4 +30,11 @@ public:
 	int Thnumber = 0;  //理科生个数
 };
 
+class Input {
+
+public:
+	int i;
+	string s;
+};
+
 # endif

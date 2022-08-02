@@ -2,22 +2,6 @@
 
 int j = 0, num;
 
-bool test(string s) {
-
-	int i;
-
-	stringstream iss(s);
-	iss >> i;
-
-	if (i > 1001) {
-		return -1;
-	}
-	else {
-		return 1;
-	}
-
-}
-
 void Add(Science& Data) {
 
 	int i;
@@ -31,8 +15,6 @@ void Add(Science& Data) {
 		/*stringstream iss(s);
 		iss >> i;*/
 
-		if (test(s) == 1)
-		{
 			stringstream iss(s);
 			iss >> i;
 	i += num;
@@ -54,7 +36,7 @@ void Add(Science& Data) {
     	cout << "" << endl;
     	cout << "返回主菜单！" << endl;
     	return;
-        }
+      
 	cout << "" << endl;
 	cout << "输入有误 请重新输入!" << endl;
 	cout << "" << endl;
