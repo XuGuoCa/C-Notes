@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="多态-多态的基本语法.cpp">
+    <ClCompile Include="纯虚函数和抽象类.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
