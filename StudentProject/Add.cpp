@@ -2,36 +2,61 @@
 
 int j = 0, num;
 
+bool test(string s) {
+
+	int i;
+
+	stringstream iss(s);
+	iss >> i;
+
+	if (i > 1001) {
+		return -1;
+	}
+	else {
+		return 1;
+	}
+
+}
+
 void Add(Science& Data) {
 
 	int i;
+	string s;
 
 		cout << "" << endl;
 		cout << "你要添加多少位学生？" << endl;
 		cout << "输入:";
-		cin >> i;
+		cin >> s;
 
-		i += num;
+		/*stringstream iss(s);
+		iss >> i;*/
 
-		if (i < 1001) {
-			cout << "" << endl;
-			cout << "请添加学生的资料:" << endl;
-			for (j; j < i; j++) {
-				Data.Thnumber++;
-				cout << "" << endl;
-				cout << "请输入第" << j + 1 << "位同学的资料" << endl;
-				cout << "名字：";
-				cin >> Data.Data[j].name;
-				cout << "学号";
-				cin >> Data.Data[j].StuNum;
-			}
-			num += j;
-			cout << "" << endl;
-			cout << "添加成功！" << endl;
-			cout << "" << endl;
-			cout << "返回主菜单！" << endl;
-		}
-		else {
-			return;
-		}
+		if (test(s) == 1)
+		{
+			stringstream iss(s);
+			iss >> i;
+	i += num;
+	cout << "" << endl;
+	cout << "请添加学生的资料:" << endl;
+	for (j; j < i; j++) 
+	{
+		Data.Thnumber++;
+		cout << "" << endl;
+		cout << "请输入第" << j + 1 << "位同学的资料" << endl;
+		cout << "名字：";
+		cin >> Data.Data[j].name;
+		cout << "学号";
+		cin >> Data.Data[j].StuNum;
+	}
+	    num += j;
+     	cout << "" << endl;
+    	cout << "添加成功！" << endl;
+    	cout << "" << endl;
+    	cout << "返回主菜单！" << endl;
+    	return;
+        }
+	cout << "" << endl;
+	cout << "输入有误 请重新输入!" << endl;
+	cout << "" << endl;
+	cout << "返回主菜单！" << endl;
 }
