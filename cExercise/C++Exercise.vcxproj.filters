@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="文件操作\文件操作-02文件文本-读文件.cpp">
+    <ClCompile Include="文件操作-04二进制文件-读文件.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
