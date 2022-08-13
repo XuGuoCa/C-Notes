@@ -13,4 +13,8 @@ void Empty(Person& Data) {
 	}
 
 	Data.Quantity = 0;
+	cout << "" << endl;
+	cout << "联系人清空成功！" << endl;
+	cout << "" << endl;
+	cout << "返回主菜单！" << endl;
 }
