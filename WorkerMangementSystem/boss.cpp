@@ -18,5 +18,5 @@ void Boss::showInfo() {
 
 string Boss::getDeptName() {
 
-	return string("æ≠¿Ì");
+	return string("¿œ∞Â");
 }
