@@ -92,7 +92,7 @@ void WorkManager::Add_Emp() {
 
 		//批量添加新的数据
 		for (int i = 0; i < addNum; i++) {
-			int id = 0;//职工编号
+			int id;//职工编号
 			string name;//职工姓名
 			int dSelect;//部门选择
 
@@ -148,7 +148,7 @@ void WorkManager::Add_Emp() {
 				worker = new Boss(id, name, 3);
 				break;
 			}
-			//将创建职工职责， 保存到数组中
+			//将创建职工， 保存到数组中
 			newSpace[this->m_EmpNum + i] = worker;
 
 		}
@@ -246,7 +246,7 @@ void WorkManager::inti_Emp() {
 //显示职工
 void WorkManager::Show_Emp() {
 	if (this->m_FileIsEmpyty) {
-		cout << "文件不存在或记录为空！" << endl;
+		cout << "文件不存在！" << endl;
 	}else {
 
 		for (int i = 0; i < this->m_EmpNum; i++) {
@@ -254,6 +254,9 @@ void WorkManager::Show_Emp() {
 			this->m_EmpArray[i]->showInfo();
 			cout << endl;
 		}
+	}
+	if (this->m_EmpNum == 0) {
+		cout << "文件为空!" << endl;
 	}
 
 	system("Pause");
@@ -273,7 +276,7 @@ void WorkManager::Del_Emp() {
 		int index = this->IsExist(id);
 
 		if (index != -1) {//职工存在并且要删除掉index位置上的职工
-			for (int i = index; i < this->m_EmpNum - 1; i++) {
+			for (int i = index; i < this->m_EmpNum - i; i++) {
 				//数据前移
 				this->m_EmpArray[i] = this->m_EmpArray[i + 1];
 			}
@@ -499,10 +502,10 @@ void WorkManager::Clean_File() {
 	cout << "1.确认" << endl;
 	cout << "2.返回" << endl;
 
-	int select = 0;
+	string select = "0";
 	cin >> select;
 
-	if (select == 1) {
+	if (select == "1") {
 		//打开模式 ios::trunc 如果存在删除文件并重新创建
 		ofstream ofs(FILENAME, ios::trunc);
 		ofs.close();
@@ -519,6 +522,9 @@ void WorkManager::Clean_File() {
 			this->m_FileIsEmpyty = true;
 		}
 		cout << "清理成功！" << endl;
+	}
+	if (select != "1" && select != "2") {
+		cout << "输入有误！" << endl;
 	}
 	system("pause");
 	system("cls");
