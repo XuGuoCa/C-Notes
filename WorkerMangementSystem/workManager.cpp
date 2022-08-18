@@ -92,22 +92,40 @@ void WorkManager::Add_Emp() {
 
 		//批量添加新的数据
 		for (int i = 0; i < addNum; i++) {
-			int id;//职工编号
+			int id = 0;//职工编号
 			string name;//职工姓名
 			int dSelect;//部门选择
+
+			//判断编号是否重复
+			int ID[100];
+			bool flag = true;
+			int num = 0;
 
 			while (true) {
 				cout << "请输入第" << i + 1 << "个新职工编号：" << endl;
 				cin >> id;
 				int ret = this->IsExist(id);
-				if (ret == -1) {
+
+				//判断输入的编号是否重复
+				for (int j = 0; j < 100; j++) {
+					if (ID[j] == id) {
+						flag = false;
+					}
+				}
+
+				if (ret == -1 && flag == true) {
 					break;
 				}
 				else {
 					cout << "输入职工编号重复请重新输入!" << endl;
 					cout << endl;
+					flag = true;
 				}
 			}
+
+			//收集输入的编号来判断
+			ID[num] = id;
+			num++;
 
 			cout << "请输入第" << i + 1 << "个新职工姓名：" << endl;
 			cin >> name;
@@ -435,17 +453,17 @@ void WorkManager::Sort_Emp() {
 
 		for (int i = 0; i < m_EmpNum; i++) {
 
-			int minOrMax = i;
-			for (int j = i + 1; j < m_EmpNum; j++) {//降序
+			int minOrMax = i;//声明最小值 或 最大值下标
+			for (int j = i + 1; j < m_EmpNum; j++) {
 
-				if (select == "1") {
+				if (select == "1") { //升序
 
 					if (m_EmpArray[minOrMax]->m_Id > m_EmpArray[j]->m_Id) {
-						
+
 						minOrMax = j;
 					}
 				}
-				else {//升序
+				if (select == "2") {//降序
 
 					if (m_EmpArray[minOrMax]->m_Id < m_EmpArray[j]->m_Id) {
 						minOrMax = j;
@@ -456,15 +474,54 @@ void WorkManager::Sort_Emp() {
 			if (i != minOrMax) {
 				Worker* temp = m_EmpArray[i];
 				m_EmpArray[i] = m_EmpArray[minOrMax];
-				m_EmpArray[minOrMax] = temp; 
+				m_EmpArray[minOrMax] = temp;
 			}
 		}
 
 		//打印
-		cout << "排序成功， 排序后的结果为:" << endl;
-		this->save();
-		this->Show_Emp();
+		if (select == "1" || select == "2") {
+			cout << "排序成功， 排序后的结果为:" << endl;
+			this->save();
+			this->Show_Emp();
+		}
+		else {
+			cout << "输入有误!" << endl;
+			system("pause");
+			system("cls");
+		}
 	}
+}
+
+//清空文件
+void WorkManager::Clean_File() {
+
+	cout << "确认清空？" << endl;
+	cout << "1.确认" << endl;
+	cout << "2.返回" << endl;
+
+	int select = 0;
+	cin >> select;
+
+	if (select == 1) {
+		//打开模式 ios::trunc 如果存在删除文件并重新创建
+		ofstream ofs(FILENAME, ios::trunc);
+		ofs.close();
+
+		if (this->m_EmpArray != NULL) {
+			for (int i = 0; i < m_EmpNum; i++) {
+				if (this->m_EmpArray[i] != NULL) {
+					delete this->m_EmpArray[i];
+				}
+			}
+			this->m_EmpNum = 0;
+			delete[] this->m_EmpArray;
+			this->m_EmpArray = NULL;
+			this->m_FileIsEmpyty = true;
+		}
+		cout << "清理成功！" << endl;
+	}
+	system("pause");
+	system("cls");
 }
 
 //析构函数
