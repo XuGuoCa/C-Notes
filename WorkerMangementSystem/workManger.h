@@ -5,6 +5,10 @@ using namespace std;
 # include "worker.h"
 # include <fstream>
 # define FILENAME "empFile.txt"
+# include "workManger.h"
+# include "employee.h"
+# include "boss.h"
+# include "manager.h"
 
 class WorkManager {
 

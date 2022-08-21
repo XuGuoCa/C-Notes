@@ -1,8 +1,4 @@
-//管理文件
 # include "workManger.h"
-# include "employee.h"
-# include "boss.h"
-# include "manager.h"
 
 //构造函数
 WorkManager::WorkManager() {
@@ -13,7 +9,6 @@ WorkManager::WorkManager() {
 	ifs.open(FILENAME, ios::in);  //读文件
 
 	if (!ifs.is_open()) {
-		cout << endl;
 		//初始化属性
 		//初始化记录的人数
 		this->m_EmpNum = 0;
