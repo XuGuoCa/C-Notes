@@ -2,6 +2,7 @@
 # include <iostream>
 using namespace std;
 # include "MyArray.hpp"
+# include <string>
 
 /*
 案例描述：
@@ -51,11 +52,65 @@ void test01() {
 	cout << "arr2的大小为:" << arr2.getSize() << endl;
 }
 
+void test02();
+
 int main() {
 
-	test01();
+	//test01();
+	test02();
 
 	system("pause");
 
 	return 0;
+}
+
+//测试自定义数据类型
+class Person {
+
+public :
+
+	Person(){}
+	//有参构造
+	Person(string name, int age) {
+		this->m_Name = name;
+		this->m_Age = age;
+	}
+
+	string m_Name;
+	int m_Age;
+};
+
+void printPersonArray(MyArray<Person> &arr) {
+
+	for (int i = 0; i < arr.getSize(); i++) {
+		cout << "姓名:" << arr[i].m_Name << "  年龄:" << arr[i].m_Age << endl;
+	}
+}
+
+void test02() {
+
+	MyArray<Person>arr3(10);
+
+	Person p1("张三", 18);
+	Person p2("李四", 19);
+	Person p3("孙悟空", 999);
+	Person p4("小李", 20);
+	Person p5("小丽", 22);
+
+	//将数据插入到数组中
+	arr3.Push_Back(p1);
+	arr3.Push_Back(p2);
+	arr3.Push_Back(p3);
+	arr3.Push_Back(p4);
+	arr3.Push_Back(p5);
+
+	//打印数组
+	printPersonArray(arr3);
+
+	//输出容量
+	cout << "输入容量大小为:" << arr3.getCapacity() << endl;
+
+	//输出的大小
+	cout << "输入大小为:" << arr3.getSize() << endl;
+
 }

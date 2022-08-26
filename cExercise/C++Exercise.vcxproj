@@ -19,10 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="模板16-类模板案例-数组类封装的需求分析.cpp" />
+    <ClInclude Include="MyArray.hpp" />
+    <ClInclude Include="模板\模板16-类模板案例-数组类封装的需求分析\MyArray.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyArray.hpp" />
+    <ClCompile Include="模板\模板16-类模板案例-数组类封装的需求分析\模板16-类模板案例-数组类封装的需求分析.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
