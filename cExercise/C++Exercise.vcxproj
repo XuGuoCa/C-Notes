@@ -21,9 +21,6 @@
   <ItemGroup>
     <ClInclude Include="MyArray.hpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="STL初识01-STL的基本概念.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

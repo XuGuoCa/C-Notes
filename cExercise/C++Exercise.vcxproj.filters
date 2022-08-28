@@ -19,9 +19,4 @@
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="STL初识01-STL的基本概念.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
 </Project>
