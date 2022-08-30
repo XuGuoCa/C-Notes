@@ -15,8 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyArray.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
+    <ClCompile Include="string容器01-构造函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
