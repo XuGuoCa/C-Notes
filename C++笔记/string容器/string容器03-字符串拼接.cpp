@@ -1,8 +1,8 @@
-//string ÈÝÆ÷02-¸³Öµ²Ù×÷
+//string ×Ö·û´®
 # include <iostream>
 using namespace std;
 
-int main() {
+int naim() {
 
 	system("pause");
 
