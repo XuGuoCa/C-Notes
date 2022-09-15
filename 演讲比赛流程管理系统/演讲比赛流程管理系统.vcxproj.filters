@@ -23,11 +23,14 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="speechManager.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="演讲比赛流程管理系统.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="speechManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\软件\下载\微信下载\WeChat Files\Applet\publicLib\317\clientPublicLib.wxapkg" />
   </ItemGroup>
 </Project>

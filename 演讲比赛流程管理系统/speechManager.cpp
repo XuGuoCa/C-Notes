@@ -256,6 +256,7 @@ void SpeechManager::saverScore() {
 	ofs.close();
 
 	cout << "记录已经保存" << endl;
+	this->num++;
 	cout << endl;
 	system("pause");
 	system("cls");
@@ -292,7 +293,11 @@ void SpeechManager::loadRecord() {
 		string data;
 		int index = 0;  //表示第几届
 
-		while (ifs >> data) {
+		int i = 0;
+		while (i < this->num) {
+
+			ifs >> data;
+
 
 			vector<string>v;  //存放6个string字符串
 
@@ -314,6 +319,7 @@ void SpeechManager::loadRecord() {
 
 			this->m_Record.insert(make_pair(index, v));
 			index++;
+			i++;
 
 			ifs.close();
 		}
@@ -327,10 +333,8 @@ void SpeechManager::showRecord() {
 
 	if (this->fileIsEmpty) {
 		cout << "往届无记录!" << endl;
-		system("pause");
-		system("cls");
-		return;
 	}
+	else{
 
 	for (int i = 0; i < this->m_Record.size(); i++) {
 
@@ -339,6 +343,7 @@ void SpeechManager::showRecord() {
 			"亚军编号:" << this->m_Record[i][2] << " 得分:" << this->m_Record[i][3] << "  "
 			"季军编号:" << this->m_Record[i][4] << " 得分:" << this->m_Record[i][5] << " "
 			<< endl;
+	}
 	}
 	cout << endl;
 
@@ -367,7 +372,10 @@ void SpeechManager::clearRecord() {
 
 		this->loadRecord();
 
+		this->fileIsEmpty = true;
+
 		cout << "清空成功!" << endl;
+		this->num = 0;
 		system("pause");
 		system("cls");
 	}

@@ -78,4 +78,7 @@ public:
 
 	//清空记录功能
 	void clearRecord();
+
+	//查看几届
+	int num = 0;
 };

@@ -134,6 +134,9 @@
     <ClCompile Include="speechManager.cpp" />
     <ClCompile Include="演讲比赛流程管理系统.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\软件\下载\微信下载\WeChat Files\Applet\publicLib\317\clientPublicLib.wxapkg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
