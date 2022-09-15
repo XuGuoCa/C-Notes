@@ -22,8 +22,10 @@ int main() {
 			s.startSpeech();
 			break;
 		case 2:
+			s.showRecord();
 			break;
 		case 3:
+			s.clearRecord();
 			break;
 		default:
 			system("cls");
