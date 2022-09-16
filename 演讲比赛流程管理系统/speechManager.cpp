@@ -35,6 +35,7 @@ void SpeechManager::show_Menu() {
 void SpeechManager::exitsYstem(){
 
 	cout << "欢迎下次使用!" << endl;
+
 	system("pause");
 	exit(0);
 }
@@ -109,7 +110,14 @@ void SpeechManager::startSpeech() {
 	cout << "本届比赛完毕！" << endl;
 	system("pause");
 	system("cls");
-	initSpeech();
+	//初始化容器和属性
+	this->initSpeech();
+
+	//创建选手
+	this->createSpeaker();
+
+	//加载往届记录
+	this->loadRecord();
 }
 
 //抽签
@@ -248,7 +256,7 @@ void SpeechManager::saverScore() {
 	//将每个数据写入到文件中
 	for (vector<int>::iterator it = v3.begin(); it != v3.end(); it++) {
 
-		ofs << *it << "," << this->m_Speaker[*it].m_Score[1] << ",";
+		ofs << *it << ',' << this->m_Speaker[*it].m_Score[1] << ',';
 	}
 	ofs << endl;
 
@@ -256,7 +264,7 @@ void SpeechManager::saverScore() {
 	ofs.close();
 
 	cout << "记录已经保存" << endl;
-	this->num++;
+	this->fileIsEmpty = false;
 	cout << endl;
 	system("pause");
 	system("cls");
@@ -293,10 +301,7 @@ void SpeechManager::loadRecord() {
 		string data;
 		int index = 0;  //表示第几届
 
-		int i = 0;
-		while (i < this->num) {
-
-			ifs >> data;
+		while (ifs >> data) {
 
 
 			vector<string>v;  //存放6个string字符串
@@ -305,7 +310,8 @@ void SpeechManager::loadRecord() {
 			int start = 0;
 
 			while (true) {
-				pos = data.find(",", start);  //找到"，"的位置
+				pos = data.find(',', start);  //找到"，"的位置
+
 				if (pos == -1) {
 					//没有找到情况
 					break;
@@ -319,11 +325,9 @@ void SpeechManager::loadRecord() {
 
 			this->m_Record.insert(make_pair(index, v));
 			index++;
-			i++;
-
-			ifs.close();
 		}
 	}
+	ifs.close();
 }
 
 //查看往届记录
@@ -375,7 +379,6 @@ void SpeechManager::clearRecord() {
 		this->fileIsEmpty = true;
 
 		cout << "清空成功!" << endl;
-		this->num = 0;
 		system("pause");
 		system("cls");
 	}
