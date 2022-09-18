@@ -11,6 +11,17 @@ Manager::Manager(string name, string pwd) {
 
 	this->m_Name = name;
 	this->m_Pwd = pwd;
+
+	//获取机房信息
+	ifstream ifs(COMPUTER_FILE, ios::in);
+
+	ComputerRoom c;
+	while (ifs >> c.m_ComId && ifs >> c.m_MaxNum) {
+
+		vCom.push_back(c);
+	}
+
+	ifs.close();
 }
 
 //选择菜单
@@ -41,7 +52,7 @@ void Manager::addPerson() {
 	cout << "\t\t|                                |\n";
 	cout << "\t\t|          1.添加学生            |\n";
 	cout << "\t\t|                                |\n";
-	cout << "\t\t|          2.查看教师            |\n";
+	cout << "\t\t|          2.添加教师            |\n";
 	cout << "\t\t|                                |\n";
 	cout << "\t\t ---------------------------------\n";
 
@@ -109,22 +120,90 @@ void Manager::addPerson() {
 	ofs.close();
 }
 
+void printStudent(Student& s) {
+
+	cout << "\t\t|   学号:" << s.m_Id << "\t姓名:" << s.m_Name << "\t密码:" << s.m_Pwd << " \n";
+}
+
+void printTeacher(Teacher& t) {
+
+	cout << "\t\t|   职工号:" << t.m_EmpId << " \t姓名:" << t.m_Name << "\t密码:" << t.m_Pwd << "\n";
+}
+
 //查看账号
 void Manager::showPerson() {
 
+	initVector();
+	cout << "请选择查看的内容:" << endl;
+	cout << "\t\t ---------------------------------\n";
+	cout << "\t\t|                                |\n";
+	cout << "\t\t|      1.查看所有学生            |\n";
+	cout << "\t\t|                                |\n";
+	cout << "\t\t|      2.查看所有老师            |\n";
+	cout << "\t\t|                                |\n";
+	cout << "\t\t ---------------------------------\n";
 
+	int select;
+
+	cout << "输入：" << endl;
+	cin >> select;
+
+	if (select == 1) {
+
+		system("cls");
+		cout << "所有学生信息如下:" << endl;
+		cout << "\t\t -------------------------------------------------\n";
+		cout << "\t\t|                                            \n";
+		for_each(vStu.begin(), vStu.end(), printStudent);
+		cout << "\t\t|                                            \n";
+		cout << "\t\t -------------------------------------------------\n";
+	}
+	else {
+
+		system("cls");
+		cout << "所有老师信息如下:" << endl;
+		cout << "\t\t --------------------------------------------\n";
+		cout << "\t\t|                                            \n";
+		for_each(vTea.begin(), vTea.end(), printTeacher);
+		cout << "\t\t|                                            \n";
+		cout << "\t\t --------------------------------------------\n";
+	}
+
+	system("pause");
+	system("cls");
 }
 
 //查看机房信息
 void Manager::showComputer() {
 
+	system("cls");
+	cout << "机房信息如下:" << endl;
+	    cout << "\t\t ------------------------------------\n";
+	    cout << "\t\t|                                \n";
+	for (vector<ComputerRoom>::iterator it = vCom.begin(); it != vCom.end(); it++) {
 
+		cout << "\t\t|   机房编号:" << it->m_ComId << "\t机房最大容量:" << it->m_MaxNum << "  \n";
+		cout << "\t\t|                                \n";
+	}
+	cout << "\t\t ------------------------------------\n";
+	system("pause");
+	system("cls");
 }
 
 //清空预约记录
 void Manager::CleanFile() {
 
+	ofstream ofs(ORDER_FILE, ios::trunc);
+	ofs.close();
+	system("cls");
 
+	cout << "\t\t ----------------------------------\n";
+	cout << "\t\t|                                  |\n";
+	cout << "\t\t|            清空成功！            |\n";
+	cout << "\t\t|                                  |\n";
+	cout << "\t\t ----------------------------------\n";
+	system("pause");
+	system("cls");
 }
 
 //初始化容器
@@ -135,7 +214,6 @@ void Manager::initVector() {
 	ifs.open(STUDENT_FILE, ios::in);
 	if (!ifs.is_open()) {
 
-		cout << "文件读取失败" << endl;
 		return;
 	}
 
@@ -154,12 +232,11 @@ void Manager::initVector() {
 	ifs.open(TEACHER_FILE, ios::in);
 	if (!ifs.is_open()) {
 
-		cout << "文件读取失败" << endl;
 		return;
 	}
 
 	Teacher t;
-	while(ifs >> t.m_EmpId && ifs >> s.m_Name && ifs >> s.m_Pwd) {
+	while(ifs >> t.m_EmpId && ifs >> t.m_Name && ifs >> t.m_Pwd) {
 
 		this->vTea.push_back(t);
 	}

@@ -3,10 +3,17 @@
 # include "student.h"
 # include "teacher.h"
 # include "manager.h"
+# include "orderFile.h"
 using namespace std;
 
 //管理员菜单
 void managerMenu(Identity*& manager);
+
+//学生菜单
+void studentMenu(Identity*& student);
+
+//教师菜单
+void TeacherMenu(Identity*& teacher);
 
 //登录模块
 void LoginIn(string fileName, int type) {
@@ -56,10 +63,16 @@ void LoginIn(string fileName, int type) {
 		while (ifs >> fId && ifs >> fName && ifs >> fPwd) {
 
 			if (id == fId && name == fName && pwd == fPwd) {
-				cout << "学生验证成功！" << endl;
+				system("cls");
+				cout << "\t\t ----------------------------------\n";
+				cout << "\t\t|                                  |\n";
+				cout << "\t\t|           学生验证成功！         |\n";
+				cout << "\t\t|                                  |\n";
+				cout << "\t\t ----------------------------------\n";
 				system("pause");
 				system("cls");
 				person = new Student(id, name, pwd);
+				studentMenu(person);
 				return;
 			}
 		}
@@ -72,10 +85,16 @@ void LoginIn(string fileName, int type) {
 
 			if (id == fId && name == fName && pwd == fPwd) {
 
-				cout << "教师验证成功！" << endl;
+				system("cls");
+				cout << "\t\t ----------------------------------\n";
+				cout << "\t\t|                                  |\n";
+				cout << "\t\t|           教师验证成功！         |\n";
+				cout << "\t\t|                                  |\n";
+				cout << "\t\t ----------------------------------\n";
 				system("pause");
 				system("cls");
 				person = new Teacher(id, name, pwd);
+				TeacherMenu(person);
 				return;
 			}
 		}
@@ -87,7 +106,12 @@ void LoginIn(string fileName, int type) {
 
 			if (name == fName && pwd == fPwd) {
 
-				cout << "验证登录成功！" << endl;
+				system("cls");
+				cout << "\t\t ----------------------------------\n";
+				cout << "\t\t|                                  |\n";
+				cout << "\t\t|           登录验证成功！         |\n";
+				cout << "\t\t|                                  |\n";
+				cout << "\t\t ----------------------------------\n";
 				system("pause");
 				system("cls");
 				person = new Manager(name, pwd);
@@ -126,7 +150,6 @@ void managerMenu(Identity*& manager) {
 		//查看账号
 		else if (select == 2) {
 
-			cout << "查看账号" << endl;
 			man->showPerson();
 		}
 		//查看机房
@@ -138,12 +161,98 @@ void managerMenu(Identity*& manager) {
 		//清空预约
 		else if (select == 4) {
 
-			cout << "清空预约" << endl;
 			man->CleanFile();
 		}
 		else {
 			delete manager;
-			cout << "注销成功！" << endl;
+			cout << "\t\t ----------------------------------\n";
+			cout << "\t\t|                                  |\n";
+			cout << "\t\t|            注销成功！            |\n";
+			cout << "\t\t|                                  |\n";
+			cout << "\t\t ----------------------------------\n";
+			system("pause");
+			system("cls");
+			return;
+		}
+	}
+}
+
+//学生菜单
+void studentMenu(Identity*& student) {
+
+	while (true) {
+
+		///学生菜单
+		student->operMenu();
+
+		Student* stu = (Student*)student;
+		int select;
+
+		cin >> select;
+		system("cls");
+
+		if (select == 1) { //申请预约
+
+			stu->applyOrder();
+		}
+		else if (select == 2) { //查看目录预约
+
+			stu->showMyOrder();
+		}
+		else if (select == 3) { //查看所有预约
+
+			stu->showAllOrder();
+		}
+		else if (select == 4) { //取消预约
+
+			stu->cancelOrder();
+		}
+		else {
+			delete student;
+			system("cls");
+			cout << "\t\t ----------------------------------\n";
+			cout << "\t\t|                                  |\n";
+			cout << "\t\t|            注销成功！            |\n";
+			cout << "\t\t|                                  |\n";
+			cout << "\t\t ----------------------------------\n";
+			system("pause");
+			system("cls");
+			return;
+		}
+	}
+}
+
+//教师菜单
+void TeacherMenu(Identity*& teacher) {
+
+	while (true) {
+
+		//教师菜单
+		teacher->operMenu();
+
+		Teacher* tea = (Teacher*)teacher;
+		int select;
+
+		cout << "输入:";
+		cin >> select;
+
+		if (select == 1) { //查看所有预约
+
+			tea->showAllOrder();
+		}
+		else if (select == 2) { //审核预约
+
+			tea->validOrder();
+		}
+		else {
+
+			delete teacher;
+			system("cls");
+			cout << "\t\t ----------------------------------\n";
+			cout << "\t\t|                                  |\n";
+			cout << "\t\t|            注销成功！            |\n";
+			cout << "\t\t|                                  |\n";
+			cout << "\t\t ----------------------------------\n";
 			system("pause");
 			system("cls");
 			return;
@@ -152,6 +261,7 @@ void managerMenu(Identity*& manager) {
 }
 
 int main() {
+
 
 	int select;
 

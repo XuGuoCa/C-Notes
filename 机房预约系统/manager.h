@@ -1,11 +1,13 @@
 #pragma once
 # include <iostream>
 # include <vector>
+# include <fstream>
+# include <algorithm>
 # include "student.h"
 # include "teacher.h"
 # include "identity.h"
 # include "globalFile.h"
-# include <fstream>
+# include "computerRoom.h"
 using namespace std;
 
 class Manager : public Identity {
@@ -44,4 +46,7 @@ public:
 
 	//去重函数封装
 	bool checkRepeat(int id, int type);
+
+	//机房容量
+	vector<ComputerRoom>vCom;
 };

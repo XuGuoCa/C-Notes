@@ -1,6 +1,9 @@
 #pragma once
 # include <iostream>
+# include <vector>
 # include "identity.h"
+# include "orderFile.h"
+# include "manager.h"
 using namespace std;
 
 class Teacher : public Identity {
