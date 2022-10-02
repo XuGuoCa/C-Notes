@@ -285,7 +285,7 @@ void Student::cancelOrder() {
 	for (int i = 0; i < of.m_Size; i++) {
 
 		//先判断是自身学号
-		if (this->m_Id == atoi(of.m_orderDate[i]["学生编号"].c_str())) {
+		if (this->m_Id == atoi(of.m_orderDate[i]["学生编号"].c_str())) {  //atio()把读取的strig学生编号转化为int 类型
 
 			//再筛选状态  审核中或预约成功
 			if (of.m_orderDate[i]["审核状态"] == "1" || of.m_orderDate[i]["审核状态"] == "2") {
